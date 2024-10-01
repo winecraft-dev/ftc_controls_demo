@@ -74,7 +74,6 @@ function handleControls() {
         x /= mag;
         y /= mag;
         mag = Math.max(-1, Math.min(1, mag));
-        console.log(mag);
         x *= mag;
         y *= -1 * mag;
     };
