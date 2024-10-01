@@ -75,10 +75,10 @@ function handleControls() {
         y /= mag;
         mag = Math.max(-1, Math.min(1, mag));
         x *= mag;
-        y *= -1 * mag;
+        y *= mag;
     };
 
-    setStickPosition(x * 50, y * 50);
+    setStickPosition(x * 50, -y * 50);
 
     let { left, right } = controls(key_w, key_a, key_s, key_d, x, y);
 
