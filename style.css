@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.button {
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.box {
+
+}
+
+.slider-title {
+    text-align: center;
+}
+
+.slider {
+    width: 100px;
+    height: 300px;
+    border: 5px solid black;
+    background: blue;
+    margin: 30px;
+}
+
+.slider-blank {
+    background: white;
+    height: 10%;
+}
+
+.controller-title {
+    text-align: center;
+}
+
+.controller-ball {
+    position: relative;
+    background: gray;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.controller-socket {
+    border: 5px solid black;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
