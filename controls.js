@@ -62,20 +62,27 @@ controller.addEventListener("mousedown", function(e) {
 });
 
 function handleControls() {
+    let x = 0;
+    let y = 0;
     if(!down) {
         controller_x = 0;
         controller_y = 0;
-    }
+    } else {
+        x = controller_x / 50;
+        y = controller_y / -50;
+        let mag = Math.sqrt(x*x + y*y);
+        x /= mag;
+        y /= mag;
+        mag = Math.max(-1, Math.min(1, mag));
+        console.log(mag);
+        x *= mag;
+        y *= -1 * mag;
+    };
 
-    let x = Math.max(-50, Math.min(50, controller_x));
-    let y = Math.max(-50, Math.min(50, controller_y));
-
-    setStickPosition(x, y);
-
-    x = x / 50;
-    y = y / -50;
+    setStickPosition(x * 50, y * 50);
 
     let { left, right } = controls(key_w, key_a, key_s, key_d, x, y);
+
     setMotors(left, right);
 }
 
