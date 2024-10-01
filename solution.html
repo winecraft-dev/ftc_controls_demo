@@ -1,0 +1,63 @@
+<!doctype HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <h1> Control Demo </h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <h4 class="slider-title"> Left Motor </h4>
+                <div class="slider">
+                    <div id="left-motor" class="slider-blank"></div>
+                </div>
+            </div>
+            <div class="box-slider">
+                <h4 class="slider-title"> Right Motor </h4>
+                <div class="slider">
+                    <div id="right-motor" class="slider-blank"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box">
+                <h2 class="controller-title"> Stick Control </h2>
+                <div class="container">
+                    <div id="socket" class="controller-socket">
+                        <div id="controller" class="controller-ball">
+                        </div>
+                    </div>
+                </div>
+                <p> Use W/A/S/D for DPAD controls </p>
+            </div>
+        </div>
+        <script src="controls.js"></script>
+        <script>
+            // INPUT:
+            // -----------
+            // dpad_up: bool
+            // dpad_left: bool
+            // dpad_down: bool
+            // dpad_right: bool
+            // stick_x: float [-1, 1]
+            // stick_y: float [-1, 1]
+            // 
+            // OUTPUT:
+            // -----------
+            // left: float [-1, 1]
+            // right: float [-1, 1]
+            function controls(dpad_up, dpad_left, dpad_down, dpad_right, stick_x, stick_y) {
+                let left = stick_y + stick_x;
+                let right = stick_y + -1 * stick_x;
+                return {
+                    left: left,
+                    right: right,
+                };
+            }
+        </script>
+    </body>
+</html>
